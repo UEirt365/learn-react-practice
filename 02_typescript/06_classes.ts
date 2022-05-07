@@ -1,3 +1,5 @@
+// NOTE: For running correctly with getter, setter, use this command: tsc -t es5 06_classes.ts
+
 // Readonly
 class Greater {
   readonly name: string = "Hello";
