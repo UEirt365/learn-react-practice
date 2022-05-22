@@ -24,7 +24,7 @@ const ExpenseForm = function (props) {
       id: Math.random().toString(),
       title: inputTitle,
       amount: inputAmount,
-      date: inputDate,
+      date: new Date(inputDate),
     };
     props.onCreateExpense(newExpense);
     setInputTitle("");
