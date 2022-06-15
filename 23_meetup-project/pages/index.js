@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import MeetupList from "../components/meetups/MeetupList";
 
 const DUMMY_MEETUPS = [
@@ -18,13 +17,16 @@ const DUMMY_MEETUPS = [
   },
 ];
 
-const HomePage = () => {
-  const [meetups, setMeetups] = useState([]);
-  useEffect(() => {
-    setMeetups(DUMMY_MEETUPS);
-  }, []);
-
-  return <MeetupList meetups={meetups} />;
+const HomePage = (props) => {
+  return <MeetupList meetups={props.meetups} />;
 };
+
+export async function getStaticProps() {
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
+  };
+}
 
 export default HomePage;
