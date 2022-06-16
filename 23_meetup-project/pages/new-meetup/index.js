@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import NewMeetupForm from "../../components/meetups/NewMeetupForm";
+import HeadInfo from "../../components/ui/HeadInfo";
 
 function NewMeetupPage() {
   const router = useRouter();
@@ -19,7 +20,12 @@ function NewMeetupPage() {
     router.push("/");
   }
 
-  return <NewMeetupForm addMeetupHandler={addMeetupHandler} />;
+  return (
+    <>
+      <HeadInfo title="Create meetup" description="Create meetup description" />
+      <NewMeetupForm addMeetupHandler={addMeetupHandler} />;
+    </>
+  );
 }
 
 export default NewMeetupPage;
